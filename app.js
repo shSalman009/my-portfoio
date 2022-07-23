@@ -1,3 +1,54 @@
+// more
+
+function addProject() {
+    const projects = document.querySelector(".project-wrapper");
+    data.map((d) => {
+        // Creat
+        const project = document.createElement("div");
+        const left = document.createElement("div");
+        const right = document.createElement("div");
+        const lightImg = document.createElement("img");
+        const darkImg = document.createElement("img");
+        const h4 = document.createElement("h4");
+        const p = document.createElement("p");
+        const btnWrapper = document.createElement("div");
+        const btnOne = document.createElement("button");
+        const btnTwo = document.createElement("button");
+        const link = document.createElement("a");
+
+        // Including1
+        project.append(left, right);
+        left.append(lightImg, darkImg);
+        right.append(h4, p, btnWrapper);
+        btnWrapper.append(btnOne, btnTwo);
+        btnOne.appendChild(link);
+
+        // add values
+        h4.textContent = d.title;
+        p.textContent = d.description;
+        lightImg.src = d.img[0];
+        darkImg.src = d.img[1];
+        link.href = d.link;
+        link.target = "_blank";
+        link.innerText = "Visit Website";
+        btnTwo.innerText = "Read More";
+
+        // add css
+
+        project.className = "project";
+        left.className = "project-left";
+        right.className = "project-right";
+        lightImg.className = "lightImg";
+        darkImg.className = "darkImg";
+        btnWrapper.className = "buttons";
+        btnOne.className = "button";
+        btnTwo.className = "button";
+
+        projects.appendChild(project);
+    });
+}
+addProject();
+
 const checkbox = document.getElementById("checkbox");
 const icons = document.querySelectorAll(".icon");
 const banner = document.querySelector(".banner-section");
@@ -6,6 +57,9 @@ let navButton = document.querySelector(".mobile-nav");
 let nav = document.getElementById("navbar");
 let open = document.getElementById("mobile-open");
 let close = document.getElementById("mobile-close");
+let darkImgs = document.querySelectorAll(".darkImg");
+let lightImgs = document.querySelectorAll(".lightImg");
+
 // const toggleBtn = document.getElementById("toggle-btn");
 
 // Responsive Breakpoints
@@ -21,8 +75,10 @@ function theme() {
     banner.classList.add("light");
     header.classList.add("light");
     icons.forEach((icon) => icon.classList.add("lightIcon"));
-
     nav.classList.add("light");
+    darkImgs.forEach((img) => {
+        img.classList.add("d-none");
+    });
 
     checkbox.addEventListener("change", () => {
         if (
@@ -37,6 +93,13 @@ function theme() {
             header.classList.add("light");
             nav.classList.remove("dark");
             nav.classList.add("light");
+            // image change
+            darkImgs.forEach((img) => {
+                img.classList.add("d-none");
+            });
+            lightImgs.forEach((img) => {
+                img.classList.remove("d-none");
+            });
         } else if (
             !document.body.classList.contains("dark") &&
             document.body.classList.contains("light")
@@ -49,6 +112,13 @@ function theme() {
             header.classList.add("dark");
             nav.classList.remove("light");
             nav.classList.add("dark");
+            // image change
+            lightImgs.forEach((img) => {
+                img.classList.add("d-none");
+            });
+            darkImgs.forEach((img) => {
+                img.classList.remove("d-none");
+            });
         }
         icons.forEach((icon) => icon.classList.toggle("darkIcon"));
     });

@@ -10,6 +10,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: "Raleway", sans-serif;
     overflow-x: hidden;
@@ -67,7 +68,7 @@ section {
 }
 /* Custom Button */
 .button {
-    color: #111;
+    color: #333;
     background: skyblue;
     border: none;
     padding: 7px 15px;
@@ -75,6 +76,9 @@ section {
     border-radius: 2px;
     cursor: pointer;
     transition: 0.3s;
+}
+.button a {
+    color: #333;
 }
 .button:hover {
     background-color: aquamarine;
@@ -302,9 +306,9 @@ section {
         rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     transition: 0.5s;
 }
-.project:hover {
+/* .project:hover {
     transform: scale(1.05);
-}
+} */
 
 .project-left {
     flex: 6;
@@ -333,8 +337,20 @@ section {
     line-height: 35px;
     text-align: left;
     margin: 0px 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.project-right button {
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+}
+.buttons button a {
 }
 
 /*  */
@@ -464,4 +480,18 @@ section {
     align-items: center;
 }
 .footer-right img {
+}
+
+.read-more {
+    display: none;
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    background: #ddd;
+    z-index: 99999999;
+    left: 10%;
+    top: 10%;
+    border-radius: 6px;
+    padding: 20px;
+    overflow-y: scroll;
 }
