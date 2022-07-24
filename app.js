@@ -25,7 +25,7 @@ function addProject() {
 
         // add values
         h4.textContent = d.title;
-        p.textContent = d.description;
+        p.innerHTML = d.description;
         lightImg.src = d.img[0];
         darkImg.src = d.img[1];
         link.href = d.link;
