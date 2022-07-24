@@ -12,16 +12,15 @@ function addProject() {
         const h4 = document.createElement("h4");
         const p = document.createElement("p");
         const btnWrapper = document.createElement("div");
-        const btnOne = document.createElement("button");
-        const btnTwo = document.createElement("button");
+        const btn = document.createElement("button");
         const link = document.createElement("a");
 
         // Including1
         project.append(left, right);
         left.append(lightImg, darkImg);
         right.append(h4, p, btnWrapper);
-        btnWrapper.append(btnOne, btnTwo);
-        btnOne.appendChild(link);
+        btnWrapper.append(btn);
+        btn.appendChild(link);
 
         // add values
         h4.textContent = d.title;
@@ -31,7 +30,6 @@ function addProject() {
         link.href = d.link;
         link.target = "_blank";
         link.innerText = "Visit Website";
-        btnTwo.innerText = "Read More";
 
         // add css
 
@@ -41,55 +39,9 @@ function addProject() {
         lightImg.className = "lightImg";
         darkImg.className = "darkImg";
         btnWrapper.className = "buttons";
-        btnOne.className = "button";
-        btnTwo.className = "button";
-        p.className = "stop-line";
+        btn.className = "button";
 
         projects.appendChild(project);
-
-        // Modal
-        const modal = document.querySelector(".modal");
-        const out = document.querySelector(".out");
-
-        const addFunction = () => {
-            const cloneProject = project.cloneNode(true);
-            const detectPara = cloneProject.lastChild.firstChild.nextSibling;
-
-            const lastButton = cloneProject.lastChild.lastChild.lastChild;
-            lastButton.innerText = "Read Less";
-            lastButton.addEventListener("click", () => {
-                outFunction();
-            });
-
-            if (document.body.classList.contains("light")) {
-                document.body.classList.add("lightShape");
-            }
-            if (document.body.classList.contains("dark")) {
-                document.body.classList.add("darkShape");
-            }
-            detectPara.classList.remove("stop-line");
-
-            cloneProject.setAttribute("id", "modal-body");
-            modal.style.display = "block";
-            modal.appendChild(cloneProject);
-        };
-
-        const outFunction = () => {
-            const detectChild = document.getElementById("modal-body");
-            if (detectChild) {
-                modal.removeChild(detectChild);
-                modal.style.display = "none";
-            }
-        };
-        btnTwo.addEventListener("click", addFunction);
-
-        window.addEventListener("mouseup", function (event) {
-            if (!event.target.closest("#modal-body")) {
-                outFunction();
-            }
-        });
-
-        out.addEventListener("click", outFunction);
     });
 }
 addProject();
@@ -104,7 +56,7 @@ let open = document.getElementById("mobile-open");
 let close = document.getElementById("mobile-close");
 let darkImgs = document.querySelectorAll(".darkImg");
 let lightImgs = document.querySelectorAll(".lightImg");
-const modal = document.querySelector(".modal");
+
 // const toggleBtn = document.getElementById("toggle-btn");
 
 // Responsive Breakpoints
@@ -124,7 +76,6 @@ function theme() {
     darkImgs.forEach((img) => {
         img.classList.add("d-none");
     });
-    modal.classList.add("light");
 
     checkbox.addEventListener("change", () => {
         if (
@@ -139,8 +90,6 @@ function theme() {
             header.classList.add("light");
             nav.classList.remove("dark");
             nav.classList.add("light");
-            modal.classList.remove("dark");
-            modal.classList.add("light");
             // image change
             darkImgs.forEach((img) => {
                 img.classList.add("d-none");
@@ -160,8 +109,6 @@ function theme() {
             header.classList.add("dark");
             nav.classList.remove("light");
             nav.classList.add("dark");
-            modal.classList.remove("light");
-            modal.classList.add("dark");
             // image change
             lightImgs.forEach((img) => {
                 img.classList.add("d-none");

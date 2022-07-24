@@ -19,10 +19,6 @@
     .contact-left h4 {
         font-size: 20px;
     }
-    .modal {
-        width: 80%;
-        left: 10%;
-    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -117,11 +113,6 @@
     .contact-right a {
         font-size: 20px;
         font-weight: 500;
-    }
-    .modal {
-        width: 90%;
-
-        left: 5%;
     }
 }
 @media only screen and (max-width: 480px) {
