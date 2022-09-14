@@ -68,12 +68,12 @@ window.addEventListener("resize", (e) => {
 
 // Light and dark mode function
 function theme() {
-  document.body.classList.add("light");
-  banner.classList.add("light");
-  header.classList.add("light");
-  icons.forEach((icon) => icon.classList.add("lightIcon"));
-  nav.classList.add("light");
-  darkImgs.forEach((img) => {
+  document.body.classList.add("dark");
+  banner.classList.add("dark");
+  header.classList.add("dark");
+  icons.forEach((icon) => icon.classList.add("darkIcon"));
+  nav.classList.add("dark");
+  lightImgs.forEach((img) => {
     img.classList.add("d-none");
   });
 
@@ -97,6 +97,8 @@ function theme() {
       lightImgs.forEach((img) => {
         img.classList.remove("d-none");
       });
+      icons.forEach((icon) => icon.classList.remove("darkIcon"));
+      icons.forEach((icon) => icon.classList.add("lightIcon"));
     } else if (
       !document.body.classList.contains("dark") &&
       document.body.classList.contains("light")
@@ -116,8 +118,9 @@ function theme() {
       darkImgs.forEach((img) => {
         img.classList.remove("d-none");
       });
+      icons.forEach((icon) => icon.classList.remove("lightIcon"));
+      icons.forEach((icon) => icon.classList.add("darkIcon"));
     }
-    icons.forEach((icon) => icon.classList.toggle("darkIcon"));
   });
 }
 theme();
@@ -176,7 +179,3 @@ window.addEventListener("mouseup", function (event) {
     banner.classList.remove("lightShape");
   }
 });
-
-const mmm = document.getElementById("mytext");
-
-console.log(mmm.substr(0, 20));
