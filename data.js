@@ -10,15 +10,25 @@ const data = [
   },
   {
     id: 2,
+    title: "Real Estate",
+    img: ["./img/real-estate-light.png", "./img/real-estate-dark.png"],
+    description:
+      "This is a functional Real Estate Company Website. This website created using Next.js and data fetching from API.  In this website you can buy property, rent property. you can also searc property by filtering",
+    liveWebsite: "https://next-realestate-woad.vercel.app",
+    sourceCode: "https://github.com/shSalman009/next-realestate",
+  },
+
+  {
+    id: 3,
     title: "E-Commerce",
     img: ["./img/e-commerce-light.png", "./img/e-commerce-dark.png"],
     description:
-      "This is an E-Commerce onlie shopping website. In this website you can add, remove, update, clear products from cart. you can purchase your cart items. you can filter product and can visit single product details.",
+      "This is an E-Commerce onlie shopping website. In this website you can add, remove, update, clear products from cart , can filter product and search product by name , can purchase your cart items. also can visit and check every single product details. for more details visit website.",
     liveWebsite: "https://fantastic-starlight-bf0953.netlify.app",
     sourceCode: "https://github.com/shSalman009/e-commerce",
   },
   {
-    id: 3,
+    id: 4,
     title: "IT Company",
     img: ["./img/company-light.png", "./img/company-dark.png"],
     description:
