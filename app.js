@@ -12,24 +12,30 @@ function addProject() {
     const h4 = document.createElement("h4");
     const p = document.createElement("p");
     const btnWrapper = document.createElement("div");
-    const btn = document.createElement("button");
-    const link = document.createElement("a");
+    const btn1 = document.createElement("button");
+    const btn2 = document.createElement("button");
+    const liveWebsite = document.createElement("a");
+    const sourceCode = document.createElement("a");
 
     // Including1
     project.append(left, right);
     left.append(lightImg, darkImg);
     right.append(h4, p, btnWrapper);
-    btnWrapper.append(btn);
-    btn.appendChild(link);
+    btnWrapper.append(btn1, btn2);
+    btn1.appendChild(liveWebsite);
+    btn2.appendChild(sourceCode);
 
     // add values
     h4.textContent = d.title;
     p.innerHTML = d.description;
     lightImg.src = d.img[0];
     darkImg.src = d.img[1];
-    link.href = d.link;
-    link.target = "_blank";
-    link.innerText = "Visit Website";
+    liveWebsite.href = d.liveWebsite;
+    liveWebsite.target = "_blank";
+    liveWebsite.innerText = "Live Website";
+    sourceCode.href = d.sourceCode;
+    sourceCode.target = "_blank";
+    sourceCode.innerText = "Source Code";
 
     // add css
 
@@ -39,7 +45,8 @@ function addProject() {
     lightImg.className = "lightImg";
     darkImg.className = "darkImg";
     btnWrapper.className = "buttons";
-    btn.className = "button";
+    btn1.className = "button";
+    btn2.className = "button";
 
     projects.appendChild(project);
   });
