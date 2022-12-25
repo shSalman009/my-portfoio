@@ -17,9 +17,18 @@ const data = [
     liveWebsite: "https://next-realestate-woad.vercel.app",
     sourceCode: "https://github.com/shSalman009/next-realestate",
   },
-
   {
     id: 3,
+    title: "Project SEO",
+    img: ["./img/order-2-light.png", "./img/order-2-dark.png"],
+    description:
+      "This is one of my client project. I convert it Figma to React.js",
+    liveWebsite: "https://project-sea.netlify.app/",
+    sourceCode: "",
+  },
+
+  {
+    id: 4,
     title: "E-Commerce",
     img: ["./img/e-commerce-light.png", "./img/e-commerce-dark.png"],
     description:
@@ -28,7 +37,7 @@ const data = [
     sourceCode: "https://github.com/shSalman009/e-commerce",
   },
   {
-    id: 4,
+    id: 5,
     title: "IT Company",
     img: ["./img/company-light.png", "./img/company-dark.png"],
     description:
