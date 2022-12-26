@@ -9,6 +9,7 @@ function addProject() {
     const right = document.createElement("div");
     const lightImg = document.createElement("img");
     const darkImg = document.createElement("img");
+    const textsWrapper = document.createElement("div");
     const h4 = document.createElement("h4");
     const p = document.createElement("p");
     const btnWrapper = document.createElement("div");
@@ -20,10 +21,11 @@ function addProject() {
     // Including1
     project.append(left, right);
     left.append(lightImg, darkImg);
-    right.append(h4, p, btnWrapper);
+    textsWrapper.append(h4, p);
+    right.append(textsWrapper, btnWrapper);
     btnWrapper.append(btn1, btn2);
-    btn1.appendChild(liveWebsite);
-    btn2.appendChild(sourceCode);
+    btn1.appendChild(sourceCode);
+    btn2.appendChild(liveWebsite);
 
     // add values
     h4.textContent = d.title;
@@ -33,9 +35,15 @@ function addProject() {
     liveWebsite.href = d.liveWebsite;
     liveWebsite.target = "_blank";
     liveWebsite.innerText = "Live Website";
-    sourceCode.href = d.sourceCode;
-    sourceCode.target = "_blank";
-    sourceCode.innerText = "Source Code";
+    if (d.sourceCode) {
+      sourceCode.href = d.sourceCode;
+      sourceCode.target = "_blank";
+      sourceCode.innerText = "Source Code";
+    } else {
+      sourceCode.innerText = "Client Project";
+      sourceCode.style.cursor = "not-allowed";
+      sourceCode.setAttribute("disabled", "disabled");
+    }
 
     // add css
 
