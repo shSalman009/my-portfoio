@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    title: "Online Course Sell application",
+    title: "E-Learning",
     img: ["./img/online-course-light.png", "./img/online-course-dark.png"],
     description:
       "This is a fully functional react online course sell application. For created this website i used react-bootstrap along with react js for front-end and firebase as backend. This website is also responsive for all device.",
