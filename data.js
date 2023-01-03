@@ -19,7 +19,7 @@ const data = [
   },
   {
     id: 3,
-    title: "Project SEO",
+    title: "Project SEA",
     img: ["./img/order-2-light.png", "./img/order-2-dark.png"],
     description:
       "This is one of my client project. I convert it Figma to React.js",
